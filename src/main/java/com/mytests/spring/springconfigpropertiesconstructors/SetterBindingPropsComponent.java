@@ -11,10 +11,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class SetterBindingPropsComponent {
 
-    String field1;
-    String field2;
-    String field3;
-    String field4;
+    String field1; // this field is binded (n/r by IDEA)
+    String field2; // this field is binded (n/r by IDEA)
+    String field3; // this field is NOT binded via ctor, but IDEA thinks it is
+    String field4; // this field is NOT binded via ctor, but IDEA thinks it is
+
 
     public SetterBindingPropsComponent(String field3, String field4) {
         this.field3 = field3;

@@ -7,10 +7,10 @@ import org.springframework.boot.context.properties.bind.ConstructorBinding;
 @ConfigurationProperties(prefix = "ctor.explicit.scanned.props")
 public class CtorBindingPropsExplicitScanned {
 
-    String field1;
-    String field2;
-    String field3;
-    String field4;
+    String field1;  // this field is not binded
+    String field2;  // this field is not binded
+    String field3;  // binded via constructor
+    String field4;  // binded via constructor
 
     @ConstructorBinding
     public CtorBindingPropsExplicitScanned(String field3, String field4) {

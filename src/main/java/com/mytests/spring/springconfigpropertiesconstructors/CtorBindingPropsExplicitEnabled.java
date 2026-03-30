@@ -7,10 +7,10 @@ import org.springframework.boot.context.properties.bind.ConstructorBinding;
 @ConfigurationProperties(prefix = "ctor.explicit.enabled.props")
 public class CtorBindingPropsExplicitEnabled {
 
-    String field1;
-    String field2;
-    String field3;
-    String field4;
+    String field1; // this field is not binded
+    String field2; // this field is not binded
+    String field3; // binded via constructor
+    String field4; // binded via constructor
 
     @ConstructorBinding
     public CtorBindingPropsExplicitEnabled(String field3, String field4) {

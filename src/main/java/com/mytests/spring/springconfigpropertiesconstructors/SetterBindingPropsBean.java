@@ -6,10 +6,10 @@ package com.mytests.spring.springconfigpropertiesconstructors;
 // despite the constructor presence, the setters should be used to bind properties
 public class SetterBindingPropsBean {
 
-    String field1;
-    String field2;
-    String field3;
-    String field4;
+    String field1; // this field is binded (n/r by IDEA)
+    String field2; // this field is binded (n/r by IDEA)
+    String field3; // this field is NOT binded via ctor, but IDEA thinks it is
+    String field4; // this field is NOT binded via ctor, but IDEA thinks it is
 
     public SetterBindingPropsBean(String field3, String field4) {
         this.field3 = field3;
