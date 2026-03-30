@@ -12,3 +12,7 @@ Error should be reported for @ConstructorBinding annotations in the @Component c
 and @Bean class.
 
 Of course, any ConfigurationProperties class w/o constructor should use setter binding.
+
+The records can be only scanned or enabled, @Component or @Bean cannot be used.
+Actually we show the error in the @Component class - ok, but the @Bean class is not
+reported.
