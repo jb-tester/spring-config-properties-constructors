@@ -3,30 +3,24 @@ package com.mytests.spring.springconfigpropertiesconstructors;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-
-// this class is defined as configuration properties using @ConfigurationProperties @Componenyt class;
-// despite the constructor presence, the setters should be used to bind properties
-
-@ConfigurationProperties(prefix = "setter.component.props")
-@Component
-public class SetterBindingPropsComponent {
-
+@ConfigurationProperties(prefix = "setter.imported.props")
+public class SetterBindingImportedConfigProps {  // false error is reported
     String field1; // this field is binded (n/r by IDEA)
     String field2; // this field is binded (n/r by IDEA)
-    SomeBean3 field3; // this field is NOT binded via ctor, but IDEA thinks it is
-    SomeBean4 field4; // this field is NOT binded via ctor, but IDEA thinks it is
+    SomeBean5 field3; // this field is NOT binded via ctor, but IDEA thinks it is
+    SomeBean6 field4; // this field is NOT binded via ctor, but IDEA thinks it is
 
 
-    public SetterBindingPropsComponent(SomeBean3 field3, SomeBean4 field4) {
+    public SetterBindingImportedConfigProps(SomeBean5 field3, SomeBean6 field4) {
         this.field3 = field3;
         this.field4 = field4;
     }
 
-    public SomeBean3 getField3() {
+    public SomeBean5 getField3() {
         return field3;
     }
 
-    public SomeBean4 getField4() {
+    public SomeBean6 getField4() {
         return field4;
     }
 
@@ -48,16 +42,16 @@ public class SetterBindingPropsComponent {
 }
 
 @Component
-class SomeBean3 {
+class SomeBean5 {
     @Override
     public String toString() {
-        return "SomeBean3: not binded as property";
+        return "SomeBean5: not binded as property";
     }
 }
 @Component
-class SomeBean4 {
+class SomeBean6 {
     @Override
     public String toString() {
-        return "SomeBean4: not binded as property";
+        return "SomeBean6: not binded as property";
     }
 }
