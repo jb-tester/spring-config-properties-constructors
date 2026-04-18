@@ -36,7 +36,7 @@ public class SpringConfigPropertiesConstructorsApplication {
         SpringApplication.run(SpringConfigPropertiesConstructorsApplication.class, args);
     }
       @Bean
-          public CommandLineRunner commandLineRunner(RecordBeanConfigProps recordBeanConfigProps, SetterBindingPropsComponent setterBindingPropsComponent, SetterBindingImportedConfigProps setterBindingImportedConfigProps) {
+          public CommandLineRunner commandLineRunner(RecordBeanConfigProps recordBeanConfigProps, SetterBindingPropsComponent setterBindingPropsComponent, SetterBindingImportedConfigProps setterBindingImportedConfigProps, SetterBindingPropsFewConstructorsComponent setterBindingPropsFewConstructorsComponent) {
               return args -> {
                   System.out.println("--------------------------------------");
                   System.out.println("RecordBeanConfigProps: field1: " + recordBeanConfigProps.field1());
@@ -53,6 +53,10 @@ public class SpringConfigPropertiesConstructorsApplication {
                   System.out.println("SetterBindingImportedConfigProps: field2: " + setterBindingImportedConfigProps.getField2());
                   System.out.println("SetterBindingImportedConfigProps: field3: " + setterBindingImportedConfigProps.getField3());
                   System.out.println("SetterBindingImportedConfigProps: field4: " + setterBindingImportedConfigProps.getField4());
+                  System.out.println("SetterBindingPropsWithFewConstructorsIncludingDefault: field1: " + setterBindingPropsFewConstructorsComponent.getField1());
+                  System.out.println("SetterBindingPropsWithFewConstructorsIncludingDefault: field2: " + setterBindingPropsFewConstructorsComponent.getField2());
+                  System.out.println("SetterBindingPropsWithFewConstructorsIncludingDefault: field3: " + setterBindingPropsFewConstructorsComponent.getField3());
+                  System.out.println("SetterBindingPropsWithFewConstructorsIncludingDefault: field4: " + setterBindingPropsFewConstructorsComponent.getField4());
                   System.out.println("--------------------------------------");
               };
           }
